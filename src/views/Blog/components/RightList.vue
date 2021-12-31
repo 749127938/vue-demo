@@ -3,7 +3,7 @@
           <li v-for="(item,i) in list" :key="i"  :class="{active:item.isSelect}">
                <span @click="handleChange(item)">{{item.name}}</span>
               <span @click="handleChange(item)" v-if="item.aside" class="aside">{{item.aside}}</span>
-              <RightList :list="item.children" @changeSelect="handleChange(item)" />
+              <RightList :list="item.children" @changeSelect="handleChange" />
           </li>
       </ul>
 </template>

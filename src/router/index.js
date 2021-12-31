@@ -24,7 +24,7 @@ const router = new VueRouter({
         // 当匹配到路径 /Project 时，渲染 Project 组件
         { name: "Project", path: '/Project', component: Project }
     ],
-    mode: "hash",
+    mode: "history",
 })
 
 export default router;

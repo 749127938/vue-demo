@@ -11,7 +11,7 @@ import loading from "@/directive/loading.js"
 Vue.prototype.$showMessage = showMessage;
 
 Vue.directive('loading', loading)
-const vm = new Vue({
+new Vue({
     router, // 路由匹配规则
     render: h => h(App),
 }).$mount('#app')
@@ -28,18 +28,18 @@ import * as blogApi from "./api/blog.js";
 // blogApi.getBlog(2, 10, 3).then((r) => {
 //     console.log("博客", r);
 // });
-blogApi.getBlogId(1).then((r) => {
-    console.log("单个博客", r);
-});
+// blogApi.getBlogId(1).then((r) => {
+//     console.log("单个博客", r);
+// });
 
-blogApi.postBlog({
-    nickname: "昵称",
-    content: "评论内容，纯文本",
-    blogId: "123",
-}).then((r) => {
-    console.log("提交评论", r);
-});
+// blogApi.postBlog({
+//     nickname: "昵称",
+//     content: "评论内容，纯文本",
+//     blogId: "123",
+// }).then((r) => {
+//     console.log("提交评论", r);
+// });
 
-blogApi.getBlogComment('123123').then((r) => {
-    console.log("单个博客的评论", r);
-});
+// blogApi.getBlogComment('123123').then((r) => {
+//     console.log("单个博客的评论", r);
+// });

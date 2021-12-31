@@ -1,13 +1,54 @@
 <template>
-  <h1>文章详情</h1>
+  <Layout>
+    <div v-loading="isLoading" class="main-container">
+      <BlogDetail :blog="data" />
+    </div>
+  <template #right>
+    <div class="right-container" v-if="data" v-loading="isLoading">
+          <BlogTOC :data="data.toc"/>
+    </div>
+  </template>
+  </Layout >
 </template>
 
 <script>
+import Layout from "@/components/Layout";
+import BlogDetail from "./components/BlogDetail";
+import featchData from "@/mixins/featchData";
+import {getBlogId} from "@/api/blog";
+import BlogTOC from "./components/BlogTOC";
 export default {
-
+  mixins:[featchData(null)],
+  components: {
+    Layout,
+    BlogDetail,
+    BlogTOC
+  },
+  methods: {
+    async fetchData(){
+      return await getBlogId()
+    }
+  }
 }
 </script>
 
-<style>
-
+<style scoped>
+  .main-container {
+  overflow-y: scroll;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+.right-container {
+  width: 300px;
+  height: 100%;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  position: relative;
+  padding: 20px;
+}
 </style>
