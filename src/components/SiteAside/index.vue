@@ -1,10 +1,10 @@
 <template>
   <div class="siteaside-container">
-      <Avatar :size="150" url="http://mdrs.yuanjin.tech/FgMwAPYq17So9nwVH44ltDHo7u3c" />
+      <Avatar :size="150" :url="awatarLogo()" />
       <h1 class="title">初夏的小窝</h1>
       <Menu />
       <Contact/>
-      <p class="footer"> 黑ICP备17001719号 </p>
+      <p class="footer"> 赣ICP备2021003164号-1 </p>
   </div>
 </template>
 
@@ -12,12 +12,19 @@
 import Avatar from "../Avatar";// 导入头像组件
 import Contact from "./Contact";// 导入联系组件
 import Menu from "./Menu";// 导入菜单组件
+import awatarLogo from "@/assets/awatar.png"
 export default {
     // 注册组件
     components: {
         Avatar,// 注册头像组件
         Contact,// 注册联系组件
         Menu,// 注册菜单组件
+    },
+    methods: {
+        awatarLogo(){
+            console.log(awatarLogo);
+            return awatarLogo;
+        }
     }
 }
 </script>
