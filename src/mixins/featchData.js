@@ -12,6 +12,7 @@ export default function(defaultDataValue = null) {
             this.data = await this.fetchData();
             console.log(this.data);
             this.isLoading = false;
+            console.log(this.data);
         },
     };
 }

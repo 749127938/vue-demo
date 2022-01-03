@@ -2,10 +2,12 @@
   <Layout>
     <div v-loading="isLoading" class="main-container">
       <BlogDetail :blog="data" />
+      <BlogComment v-if="!isLoading"/>
     </div>
   <template #right>
     <div class="right-container" v-if="data" v-loading="isLoading">
           <BlogTOC :data="data.toc"/>
+          <!-- <BlogComment/> -->
     </div>
   </template>
   </Layout >
@@ -17,12 +19,15 @@ import BlogDetail from "./components/BlogDetail";
 import featchData from "@/mixins/featchData";
 import {getBlogId} from "@/api/blog";
 import BlogTOC from "./components/BlogTOC";
+import BlogComment from "./components/BlogComment";
+
 export default {
   mixins:[featchData(null)],
   components: {
     Layout,
     BlogDetail,
-    BlogTOC
+    BlogTOC,
+    BlogComment,
   },
   methods: {
     async fetchData(){
