@@ -15,8 +15,7 @@
         "test:SiteAside": "vue serve ./src/components/SiteAside/test.vue",
         "test:Layout": "vue serve ./src/components/Layout/test.vue",
         "test:Home": "vue serve ./src/views/Home/test.vue",
-        "test:RightList": "vue serve ./src/views/Blog/components/test.vue",
-        "test:MessageArea": "vue serve ./src/components/MessageArea/test.vue"
+        "test:RightList": "vue serve ./src/views/Blog/components/test.vue"
 
     },
     "dependencies": {
