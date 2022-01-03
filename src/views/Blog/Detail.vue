@@ -1,12 +1,12 @@
 <template>
   <Layout>
-    <div v-loading="isLoading" class="main-container">
+    <div ref="mainContainer" v-loading="isLoading" class="main-container">
       <BlogDetail :blog="data" />
       <BlogComment v-if="!isLoading"/>
     </div>
   <template #right>
     <div class="right-container" v-if="data" v-loading="isLoading">
-          <BlogTOC :data="data.toc"/>
+          <BlogTOC :toc="data.toc"/>
           <!-- <BlogComment/> -->
     </div>
   </template>
@@ -32,8 +32,29 @@ export default {
   methods: {
     async fetchData(){
       return await getBlogId()
+    },
+    handleScroll(){
+      // 触发事件
+      this.$bus.$emit("mainscroll",this.$refs.mainContainer)
     }
-  }
+  },
+  mounted(){
+    // 给容器注册一个滚动条事件
+    this.$refs.mainContainer.addEventListener('scroll',this.handleScroll)
+  },
+  // 组件销毁时事件也要注销掉
+  destoryed(){
+    this.$refs.mainContainer.addEventListener("scroll", this.handleScroll);
+  },
+  // 当页面刷新之后更新到锚点位置
+  updated(){
+      const hash = location.hash;
+      console.log(hash);
+      location.hash = "";
+      setTimeout(()=>{
+          location.hash = hash;
+      },10)
+  },
 }
 </script>
 

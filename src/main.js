@@ -7,6 +7,7 @@ import "./mock"; // 运行mock文件
 import "@/api/banner.js"; // 运行api的banner文件
 import "@/api/news.js"; // 运行api的news文件
 import loading from "@/directive/loading.js"
+import "./eventBus"
 // 把showMessage 加入到vue的实例成员
 Vue.prototype.$showMessage = showMessage;
 

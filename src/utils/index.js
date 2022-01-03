@@ -8,3 +8,7 @@ from "./showMessage";
 
 export { default as formatDate }
 from "./formatDate";
+
+// 导出防抖函数
+export { default as debounce }
+from "./debounce";

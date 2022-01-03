@@ -273,6 +273,10 @@ Mock.mock("/api/comment", "post", {
         id: "@guid",
         nickname: "@cname",
         content: "@cparagraph(1, 10)",
+        blog: {
+            id: "@guid",
+            title: "@ctitle",
+        },
         createDate: Date.now(),
         "avatar|1": [
             "https://qiheizhiya.oss-cn-shenzhen.aliyuncs.com/image/avatar6.jpg",
