@@ -23,7 +23,7 @@ import mainScroll  from '@/mixins/mainScroll';
 import BlogComment from "./components/BlogComment";
 
 export default {
-    mixins:[featchData(null),mainScroll('container')],
+  mixins:[featchData(null),mainScroll('mainContainer')],
   components: {
     Layout,
     BlogDetail,

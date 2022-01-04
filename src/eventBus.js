@@ -55,6 +55,9 @@
  * 参数：-滚动高度
  */
 
-import Vue from "vue";
 
-Vue.prototype.$bus = new Vue();
+import Vue from "vue";
+const app = new Vue({});
+Vue.prototype.$bus = app
+
+export default app;

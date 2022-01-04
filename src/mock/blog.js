@@ -29,7 +29,7 @@ Mock.mock(/^\/api\/blog(\?.+)?$/, 'get', function(req) {
                 },
                 "scanNumber|0-3000": 0,
                 "commentNumber|0-3000": 30,
-                thumb: Mock.Random.image("300x250", "#000", "#fff", "Random Image"),
+                "thumb": "@image(300x250, @color, #fff,default)",
                 createDate: `@date('T')`
             }],
         }

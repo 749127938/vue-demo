@@ -2,7 +2,7 @@
   <div class="blog-list-container" ref="container" v-loading="isLoading">
     <ul>
       <li v-for="item in data.rows" :key="item.id">
-        <div class="thumb">
+        <div class="thumb" v-if="item.thumb">
           <RouterLink :to="{
             name:'Detail',
             params:{
@@ -10,7 +10,7 @@
             }
           }">
             <img
-              :src="item.thumb"
+              v-lazy="item.thumb"
               :alt="item.title"
               :title="item.title"
             />
