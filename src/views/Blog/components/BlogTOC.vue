@@ -65,7 +65,10 @@ export default {
         /**
          * 设置ActiveAnchor为正确的值
          */
-        setActiveAnchor(){
+        setActiveAnchor(scrollDom){
+            if(!scrollDom){
+                return;
+            }
             this.activeAnchor = "";// 由于要重新设置所以要先清空
             // 设置范围大小
             const range = 200;

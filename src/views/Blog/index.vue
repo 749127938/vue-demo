@@ -12,6 +12,7 @@
 import Layout from "@/components/Layout";
 import BlogList from "./components/BlogList";
 import BlogCateGroy from "./components/BlogCateGroy";
+
 export default {
   created(){
     // $route为路由地址

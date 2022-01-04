@@ -51,9 +51,10 @@
 import Pager from "@/components/Pager";
 import {getBlog} from '@/api/blog.js'
 import fetchData  from '@/mixins/featchData';
+import mainScroll  from '@/mixins/mainScroll';
 import {formatDate} from '@/utils';
 export default {
-  mixins:[fetchData ({})],
+  mixins:[fetchData ({}),mainScroll('container')],
     components: {
       Pager,
     },
@@ -107,7 +108,7 @@ export default {
         this.data = await this.fetchData();
         this.isLoading = false;
       }
-    }
+    },
 }
 </script>
 

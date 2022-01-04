@@ -22,7 +22,6 @@ export default {
     },
     methods: {
         awatarLogo(){
-            console.log(awatarLogo);
             return awatarLogo;
         }
     }

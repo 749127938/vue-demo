@@ -32,7 +32,6 @@ export async function postBlog(commentInfo) {
 
 // 分页获取评论
 export async function getBlogComment(blogId, page = 1, limit = 10) {
-    console.log('发出请求');
     return await request.get('/api/comment', {
         params: {
             blogId,

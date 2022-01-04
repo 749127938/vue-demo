@@ -48,7 +48,11 @@
 /**
  * 事件名：mainscroll
  * 含义：主区域滚动条位置变化后触发
- * 参数：-滚动的DOM元素
+ * 参数：-滚动的DOM元素 如果是undefined表示元素不存在了
+ * 
+ * 事件名：setMainScroll
+ * 含义：设置主区域滚动条位置时触发
+ * 参数：-滚动高度
  */
 
 import Vue from "vue";
