@@ -17,7 +17,7 @@ export default {
   created(){
     // $route为路由地址
     // $router为路由信息
-    // console.log(this.$route);
+    //  //(this.$route);
   },
   components:{
     Layout,

@@ -16,7 +16,7 @@ export default function showMessage(options = {}) {
     const div = document.createElement("div");
     // 设置弹窗的类样式
     div.className = `${styles.message} ${styles['message-' + type]}`;
-    console.log(getComputedStyle(container).position);
+    //(getComputedStyle(container).position);
     // 判断弹窗的容器的position是否是静态的
     if (getComputedStyle(container).position == 'static') {
         // 如果是静态的再判断是否是body如果是body就不设置

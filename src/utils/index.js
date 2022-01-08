@@ -12,3 +12,7 @@ from "./formatDate";
 // 导出防抖函数
 export { default as debounce }
 from "./debounce";
+
+// 导出设置标题函数
+export { default as setTitle }
+from "./setTitle";

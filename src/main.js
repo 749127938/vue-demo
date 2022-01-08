@@ -6,17 +6,17 @@ import { showMessage } from "./utils/"; // 导入消息弹窗
 import "./mock"; // 运行mock文件
 import "@/api/banner.js"; // 运行api的banner文件
 import "@/api/news.js"; // 运行api的news文件
-
+import store from "@/store"
 import "./eventBus"
 // 把showMessage 加入到vue的实例成员
 Vue.prototype.$showMessage = showMessage;
-
 // 导入并且注册指令
 import loading from "@/directive/loading.js"
 import lazy from "@/directive/lazy.js"
 Vue.directive('loading', loading)
 Vue.directive('lazy', lazy)
 new Vue({
+    store,
     router, // 路由匹配规则
     render: h => h(App),
 }).$mount('#app')

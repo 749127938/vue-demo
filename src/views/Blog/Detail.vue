@@ -1,4 +1,4 @@
-<template>
+<template> 
   <Layout>
     <div ref="mainContainer" v-loading="isLoading" class="main-container">
       <BlogDetail :blog="data" />
@@ -21,6 +21,7 @@ import {getBlogId} from "@/api/blog";
 import BlogTOC from "./components/BlogTOC";
 import mainScroll  from '@/mixins/mainScroll';
 import BlogComment from "./components/BlogComment";
+import {setTitle} from '@/utils'
 
 export default {
   mixins:[featchData(null),mainScroll('mainContainer')],
@@ -32,7 +33,9 @@ export default {
   },
   methods: {
     async fetchData(){
-      return await getBlogId()
+      const resp = await getBlogId()
+      setTitle.setRouterTitle(resp.title)
+      return resp;
     },
   },
   // 当页面刷新之后更新到锚点位置

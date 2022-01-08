@@ -11,7 +11,7 @@ export default function(defaultDataValue = null) {
         async created() {
             this.data = await this.fetchData();
             this.isLoading = false;
-            console.log(this.data);
+            //(this.data);
         },
     };
 }

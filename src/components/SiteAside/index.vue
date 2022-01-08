@@ -1,14 +1,17 @@
 <template>
   <div class="siteaside-container">
-      <Avatar :size="150" :url="awatarLogo()" />
-      <h1 class="title">初夏的小窝</h1>
+     <template v-if="data">
+        <Avatar :size="150" :url="data.avatar" />
+        <h1 class="title">{{data.siteTitle}}</h1>
+     </template>
       <Menu />
-      <Contact/>
-      <p class="footer"> 赣ICP备2021003164号-1 </p>
+      <Contact v-if="data"/>
+      <p v-if="data" class="footer">{{data.icp}} </p>
   </div>
 </template>
 
 <script>
+import {mapState} from 'vuex'
 import Avatar from "../Avatar";// 导入头像组件
 import Contact from "./Contact";// 导入联系组件
 import Menu from "./Menu";// 导入菜单组件
@@ -19,6 +22,15 @@ export default {
         Avatar,// 注册头像组件
         Contact,// 注册联系组件
         Menu,// 注册菜单组件
+    },
+    created(){
+        this.$store.dispatch('setting/getSetting')
+    },
+    computed:{
+        ...mapState('setting',{
+            data:state=> state.data,
+            loading:state=> state.loading,
+        })
     },
     methods: {
         awatarLogo(){

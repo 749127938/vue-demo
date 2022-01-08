@@ -33,14 +33,14 @@ export default function(el, binding) {
 // {
 //     bind(el, binding) {
 //         // 只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。
-//         console.log('bind', el, binding);
+//          //('bind', el, binding);
 //     },
 //     inserted(el, binding) {
 //         // 被绑定元素插入父节点时调用。
-//         console.log('inserted', el, binding);
+//          //('inserted', el, binding);
 //     },
 //     update(el, binding) {
 //         // 所在组件的 VNode 更新时调用
-//         console.log('update', el, binding);
+//          //('update', el, binding);
 //     }
 // }

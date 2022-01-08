@@ -20,10 +20,10 @@
 <script>
 import Icon from "@/components/Icon";
 import Carouselitem from "./Carouselitem.vue";
-import banner from "@/api/banner.js";
-import fetchData from "@/mixins/featchData.js";
+// import banner from "@/api/banner.js";
+// import fetchData from "@/mixins/featchData.js";
+import {mapState} from "vuex"
 export default {
-    mixins: [fetchData([])],
     components: {
         Icon,
         Carouselitem
@@ -72,22 +72,36 @@ export default {
             this.currenHeight = this.$refs.home.clientHeight;
         }
     },
+    created(){
+         //(!this.$store.state.banners);
+        if(!!this.$store.state.banners.data){
+            this.$store.dispatch('banners/getBanner')
+            
+        }
+        return;
+        
+    },
    //  实例创建前
     beforeCreate(){
     },
     // 挂载完成获取页面的高度
     mounted(){
+         //(this.currenHeight, this.$refs.home);
          this.currenHeight = this.$refs.home.clientHeight
          window.addEventListener('resize',this.handleResize)
     },
     destroyed(){
         window.removeEventListener('resize',this.handleResize)
-        console.log('销毁');
+         //('销毁');
     },
     computed: {
         marginTop(){
             return -this.index * this.currenHeight + 'px';
-        }
+        },
+        ...mapState('banners',{
+            data:(store)=> store.data,
+            isLoading:(store)=> store.isLoading
+        })
     }
 
 }

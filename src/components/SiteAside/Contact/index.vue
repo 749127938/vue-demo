@@ -1,20 +1,20 @@
 <template>
         <ul class="contact-cantainer">
             <li>
-                <a href="https://developer.duyiedu.com/home">
+                <a :href="data.github">
                     <div>
                          <Icon type="github" />
                     </div>
-                    <span>Duyi-Edu</span>
+                    <span>{{data.githubName}}</span>
                 </a>
                 
             </li>
             <li>
-               <a href="mailto:749127938@qq.com">
+               <a :href="`mailto:${data.mail}`">
                     <div>
                          <Icon type="mail" />
                     </div>
-                    <span>749127938@qq.com</span>
+                    <span>{{data.mail}}</span>
                 </a>
             </li>
             <li>
@@ -22,10 +22,10 @@
                     <div>
                          <Icon type="qq" />
                     </div>
-                    <span>749127938</span>
+                    <span>{{data.qq}}</span>
                 </a>
                 <div class='pop'>
-                    <img src="https://developer.duyiedu.com/img/wexin.jpg" alt="">
+                    <img :src="data.qqQrCode" alt="">
                 </div>
             </li>
             <li>
@@ -33,23 +33,33 @@
                     <div>
                          <Icon type="weixin" />
                     </div>
-                    <span>Clear_Poor</span>
+                    <span>{{data.weixin}}</span>
                 </a>
                 <div class='pop'>
-                    <img src="https://developer.duyiedu.com/img/wexin.jpg" alt="">
+                    <img :src="data.weixinQrCode" alt="">
                 </div>
             </li>
         </ul>
 </template>
 
 <script>
-    import Icon from "../../Icon";// 导入图标组件
-    export default {
-        // 注册Icon组件
-        components: {
-            Icon
-        }
+// import {mapState} from 'Vuex';
+import Icon from "../../Icon";// 导入图标组件
+import {mapState} from 'vuex'
+export default {
+    // 注册Icon组件
+    components: {
+        Icon
+    },
+    created(){
+        this.$store.dispatch('setting/getSetting')
+    },
+    computed: {
+        ...mapState('setting',{
+            data:state=>state.data,
+        })
     }
+}
 </script>
 
 <style scoped lang='less'>

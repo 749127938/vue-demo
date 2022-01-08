@@ -61,7 +61,7 @@ export default {
         nums(){
             let arr = [];
             for(let i = this.minPage;i<=this.maxPage;i++){
-                // console.log(i);
+                //  //(i);
                 arr.push(i);
             }
             return arr
@@ -70,7 +70,7 @@ export default {
     // 这是一个方法
     methods:{
         handlePageChange(newPage){
-            console.log(newPage);
+             //(newPage);
             this.$emit("changePage",newPage)
         }
     }

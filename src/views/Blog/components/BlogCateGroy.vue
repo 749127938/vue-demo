@@ -37,7 +37,7 @@ export default {
       return resp
     },
     changeSelect(item){
-      console.log(item);
+       //(item);
       const query = {
           page:1,
           limit:this.limit

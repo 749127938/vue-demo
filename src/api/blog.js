@@ -6,7 +6,7 @@ export async function getBlogType() {
 
 // 获取文章列表
 export async function getBlog(page = 1, limit = 10, categoryId = -1) {
-    console.log(categoryId, page, limit);
+    //(categoryId, page, limit);
     return await request('/api/blog', {
         params: {
             page, // 第几页
