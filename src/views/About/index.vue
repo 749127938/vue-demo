@@ -1,6 +1,6 @@
 <template>
-  <div v-loading="isLoading || Loading" class="about-container">
-    <iframe @load="loading = true" class="about-iframe" :src="data" frameborder="0"></iframe>
+  <div v-loading="isLoading " class="about-container">
+    <iframe @load="loading = false" class="about-iframe" :src="data" frameborder="0"></iframe>
   </div>
 </template>
 
@@ -9,7 +9,7 @@ import {mapState} from 'vuex'
 export default {
   data(){
     return {
-      loading:false
+      loading:true
     }
   },
   created(){
