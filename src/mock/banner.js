@@ -6,7 +6,7 @@ Mock.mock("/api/banner", "get", {
             id: "1",
             midImg: "https://cdn.inis.cc/comm/assets/images/bg/21.jpg",
             bigImg: "https://cdn.inis.cc/comm/assets/images/bg/21.jpg",
-            title: "轮播1",
+            title: "你好",
             description: "错过了就错过了,再追回来天色也不对",
         },
         {
